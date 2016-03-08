@@ -25,6 +25,10 @@
         }
     },
     "scripts": {
+        "setup": [
+            "php bin/create_db.php",
+            "php vendor/bin/phinx migrate -c var/db/phinx.php"
+        ],
         "test": [
             "phpmd src text ./phpmd.xml",
             "phpcs src tests",
