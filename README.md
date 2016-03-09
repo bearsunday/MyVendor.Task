@@ -31,6 +31,14 @@ DB_READ=slave1.example.com,slave2.example.com
 composer test
 ```
 
+## Deployment
+
+Edit `deploy/servers.yml` and `deploy/deploy.php`.
+
+```
+composer deploy-prod
+```
+
 ## Author
 
  * Akihito Koriyama
