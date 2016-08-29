@@ -1,16 +1,18 @@
 <?php
 
-namespace MyVendor\Task\Resource\Page;
+namespace MyVendor\Task\Resource\App;
 
 use BEAR\Resource\ResourceObject;
 use Koriym\DbAppPackage\AbstractDatabaseTestCase;
 
 class TaskTest extends AbstractDatabaseTestCase
 {
+    protected $uri = 'app://self/task';
+
     public function testOnPost()
     {
         $query = ['title' => 'shopping'];
-        $page = $this->resource->post->uri('app://self/task')->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri($this->uri)->withQuery($query)->eager->request();
         $this->assertSame(201, $page->code);
         $this->assertArrayHasKey('Location', $page->headers);
 
