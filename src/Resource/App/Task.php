@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace MyVendor\Task\Resource\App;
 
@@ -13,7 +14,7 @@ class Task extends ResourceObject
     use NowInject;
     use QueryLocatorInject;
 
-    public function onGet($id = null)
+    public function onGet(string $id = null) : ResourceObject
     {
         $this->body = $id ?
             $this->pdo->fetchOne($this->query['task_item'], ['id' => $id]) :
@@ -22,7 +23,7 @@ class Task extends ResourceObject
         return $this;
     }
 
-    public function onPost($title)
+    public function onPost(string $title) : ResourceObject
     {
         $params = [
             'title' => $title,
@@ -37,7 +38,7 @@ class Task extends ResourceObject
         return $this;
     }
 
-    public function onPatch($id)
+    public function onPatch(string $id) : ResourceObject
     {
         $params = [
             'id' => $id,
