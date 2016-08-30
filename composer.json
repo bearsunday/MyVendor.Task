@@ -11,7 +11,7 @@
         "koriym/db-app-package": "~1.0"
     },
     "require-dev": {
-        "composer/composer": ">=1.0.0-beta1",
+        "composer/composer": "~1.0",
         "phpunit/phpunit": "~4.8 || ~5.2",
         "phpunit/dbunit": "~2.0",
         "squizlabs/php_codesniffer": "~2.5",
