@@ -4,14 +4,14 @@
     "description": "",
     "license": "proprietary",
     "require": {
-        "php": ">=5.5.0",
+        "php": ">=7.0.0",
         "roave/security-advisories": "dev-master",
         "bear/package": "~1.0",
         "josegonzalez/dotenv": "~2.0",
-        "koriym/db-app-package": "1.x-dev"
+        "koriym/db-app-package": "~1.0"
     },
     "require-dev": {
-        "composer/composer": ">=1.0.0-beta1",
+        "composer/composer": "~1.0",
         "phpunit/phpunit": "~4.8 || ~5.2",
         "phpunit/dbunit": "~2.0",
         "squizlabs/php_codesniffer": "~2.5",
@@ -22,6 +22,11 @@
     "autoload": {
         "psr-4": {
             "MyVendor\\Task\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MyVendor\\Task\\": "tests/"
         }
     },
     "scripts": {
